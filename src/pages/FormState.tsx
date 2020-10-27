@@ -2,14 +2,9 @@ import { makeObservable, observable } from "mobx";
 import FormStateCommon from "../state/FormStateCommon";
 
 class FormState extends FormStateCommon {
-  firstName: String = "";
-  lastName: String = "";
-  phone: String = "";
-  extraPhone: String = "";
-
   data = {
-    firstName: "f",
-    lastName: "l",
+    firstName: "",
+    lastName: "",
     phone: "",
     extraPhone: "",
   };
@@ -23,12 +18,7 @@ class FormState extends FormStateCommon {
   constructor() {
     super();
     makeObservable(this, {
-      firstName: observable,
-      lastName: observable,
-      phone: observable,
-      extraPhone: observable,
-
-      data: observable.deep,
+      data: observable,
     });
   }
 }
